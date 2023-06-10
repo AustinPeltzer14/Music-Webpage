@@ -1,0 +1,132 @@
+body {
+    margin: 1in;
+  }
+  .table-margin {
+    margin-left: -8px;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .composer {
+    text-align: right;
+    
+  }
+  .spacing {
+    display: block;
+    margin-top: 2px; /* Adjust the spacing as needed */
+    font-weight: normal;
+  }
+  
+  .button-spacing {
+    margin-right: 80px; /* Adjust the margin value to increase or decrease the spacing */
+    transform: translateX(-128px);
+  }
+  
+  .button-link {
+    margin-left: 75px; /* Adjust the margin value to increase or decrease the spacing */
+  }
+  
+  
+  .container .title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  
+  .header caption {
+    display: inline-block;
+  }
+  
+  .header .bold {
+    font-weight: bold;
+    margin-right: 20px; /* Adjust the desired spacing between words */
+    font-size: 20px; /* Adjust the desired font size */
+    position: relative;
+  }
+  
+  .header span:not(.bold) {
+    margin-right: 40px; /* Adjust the desired spacing between words */
+    font-size: 20px; /* Adjust the desired font size */
+  }
+  
+  .header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px; /* Adjust the desired height of the underline */
+    background-color: black; /* Adjust the desired color of the underline */
+  }
+  
+  
+  
+  table {
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  caption {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  .transition-gap {
+    margin-bottom: 250px;
+  }
+  
+  
+  
+  body {
+    scroll-behavior: smooth;
+  }
+  
+  .playbutton {
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 1em auto 20px auto;
+  display: block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(#ffffff, #f5f5f5);
+  width: 125px;
+   -webkit-transition: 0.5s;
+   user-select: none;
+  }
+  
+  .playbutton:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      -webkit-transition: 0.5s;
+  }
+  
+  .playbutton:active {
+      background: #f5f5f5;
+      box-shadow: 0 5px #f5f5f5;
+      -webkit-transition: 0s;
+      transform: translateY(4px);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
