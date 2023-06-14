@@ -71,7 +71,7 @@ function populate() {
         let video = document.createElement('p');
         video.classList.add('video');
         video.textContent = information[i].video;
-
+ 
         // creating <p> for the credit
         let credit = document.createElement('p');
         credit.classList.add('credit');
