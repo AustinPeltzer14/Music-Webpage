@@ -1,0 +1,27 @@
+// Function to add the "show" class to the closest iframe
+function addShowClass(event) {
+  const iframe = event.target.closest('.iframe-container').querySelector('iframe');
+  iframe.classList.add('show');
+}
+
+// Function to remove the "show" class from the closest iframe
+function removeShowClass(event) {
+  const iframe = event.target.closest('.iframe-container').querySelector('iframe');
+  iframe.classList.remove('show');
+}
+
+// Get all the add buttons
+const addButtons = document.querySelectorAll('.add-button');
+
+// Attach event listener to each add button
+addButtons.forEach(function(button) {
+  button.addEventListener('click', addShowClass);
+});
+
+// Get all the remove buttons
+const removeButtons = document.querySelectorAll('.remove-button');
+
+// Attach event listener to each remove button
+removeButtons.forEach(function(button) {
+  button.addEventListener('click', removeShowClass);
+});
