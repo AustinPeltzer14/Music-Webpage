@@ -120,10 +120,7 @@ body {
     width: 1rem;
   }
 
-  .fa-play::before {
-    content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' id='IconChangeColor' height='30' width='30'> <g> <path fill='none' fill-opacity='0' d='M0 0h24v24H0z' id='mainIconPathAttribute'></path> <path d='M7.752 5.439l10.508 6.13a.5.5 0 0 1 0 .863l-10.508 6.13A.5.5 0 0 1 7 18.128V5.871a.5.5 0 0 1 .752-.432z' id='mainIconPathAttribute'></path> </g> </svg>")!important;    
-     
-}
+ 
 
 
   .fa-pause {
@@ -133,11 +130,6 @@ body {
     width: 1rem;
   }
 
-  .fa-pause::before {
-    
-    content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-player-pause' width='30' height='30' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><rect x='6' y='5' width='4' height='14' rx='1' /><rect x='14' y='5' width='4' height='14' rx='1' /></svg>")!important;
-
-  }
 
   
   .fa-5x {
@@ -186,8 +178,13 @@ progress[value]::-webkit-progress-bar {
 progress[value]::-webkit-progress-value {
   background-color: #9ad9fd;
 }
+
 .actions {
-  margin-left: 12px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+
 }
 
 .actions i,
@@ -200,28 +197,6 @@ progress[value]::-webkit-progress-value {
   color: transparent;
   float: left;
   cursor: pointer;  
-}
-
-.prev {
-  margin-left: 19px; 
-  float: left;
-  content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 512 512' id='IconChangeColor'><title>ionicons-v5-c</title><polygon points='496 400 256 256 496 112 496 400'></polygon><polygon points='256 400 16 256 256 112 256 400'></polygon></svg>")!important;
-
-}
-
-.play {
-  margin: 0 20px 0 20px; 
-  float: left;
-  width: 30px;
-  height: 30px;
-}
-
-.next {
-  margin-right: 16px; 
-  float: left;
-  content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 512 512' id='IconChangeColor'><title>ionicons-v5-c</title><polygon points='16 400 256 256 16 112 16 400'></polygon><polygon points='256 400 496 256 256 112 256 400'></polygon></svg>")!important;
-
-
 }
 
 #mute {
