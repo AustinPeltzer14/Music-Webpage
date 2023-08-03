@@ -26,6 +26,7 @@ body {
   
   .main-container {
     position: relative;
+    
   }
   
   .list-container {
@@ -35,20 +36,27 @@ body {
   }
   
   .list-container li {
-    margin: 0;
-    color: transparent;
-    background-image: linear-gradient(90deg, red 50%, black 50%);
-    background-position: 100%;
-    background-size: 200% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    transition: background-position 1s ease;
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    justify-content: space-between;
-    pointer-events: all;
-    padding: 0 auto;
+    
+      margin: 0;
+      color: transparent;
+      background-image: linear-gradient(90deg, red 50%, black 50%);
+      background-position: 100%;
+      background-size: 200% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      transition: background-position 1s ease;
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      justify-content: space-between;
+      pointer-events: all;
+      padding: 0 auto;
+      column-gap: 2rem;
+      height: 100%;
+    }
+  
+  .list-container li > * {
+    flex: 1;
   }
   
   .list-container li .title-company {
@@ -57,8 +65,10 @@ body {
   
   .list-container li p.audio-player,
   .list-container li p.video,
-  .list-container li p.credit {
+  .list-container li p.credit,
+  .list-container li h2 {
     width: auto;
+    margin: 0;
   }
   
   .list-container li h2 {
@@ -83,6 +93,10 @@ body {
   
   .list-container li:hover {
     background-position: 0;
+
+  }
+  .list-container li path:hover {
+    fill: red;
   }
 
   .all-tracks :nth-child(n+2) {
@@ -90,6 +104,8 @@ body {
   }
 
   .video-container {
+    color: transparent;
+
     display: flex;
   }
   
@@ -98,14 +114,29 @@ body {
     cursor: pointer;
     
   }
-  .fa-play{
+  .fa-play {
     color: transparent;
+    height: 1rem;
+    width: 1rem;
   }
-  
-  .fa-pause{
+
+  .fa-play::before {
+    content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' id='IconChangeColor' height='30' width='30'> <g> <path fill='none' fill-opacity='0' d='M0 0h24v24H0z' id='mainIconPathAttribute'></path> <path d='M7.752 5.439l10.508 6.13a.5.5 0 0 1 0 .863l-10.508 6.13A.5.5 0 0 1 7 18.128V5.871a.5.5 0 0 1 .752-.432z' id='mainIconPathAttribute'></path> </g> </svg>")!important;    
+     
+}
+
+
+  .fa-pause {
     
     color: transparent;
-   
+    height: 1rem;
+    width: 1rem;
+  }
+
+  .fa-pause::before {
+    
+    content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-player-pause' width='30' height='30' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><rect x='6' y='5' width='4' height='14' rx='1' /><rect x='14' y='5' width='4' height='14' rx='1' /></svg>")!important;
+
   }
 
   
@@ -120,18 +151,21 @@ body {
   border-radius: 5px;
   overflow: hidden;
   float: right;
-  margin-top: 0px;
+  color: transparent;
+  margin-bottom: px;
+  display: flex;
+  flex-direction: column;
 }
 
-#music img {
-  width: 100%;
-}
+
 
 .title {
   text-align: center;
   line-height: 26px;
   font-size: 14px;
-}
+  color: transparent;
+  }
+
 
 #pause {
   display: none;
@@ -152,39 +186,74 @@ progress[value]::-webkit-progress-bar {
 progress[value]::-webkit-progress-value {
   background-color: #9ad9fd;
 }
+.actions {
+  margin-left: 12px;
+}
 
-.actions i {
+.actions i,
+.actions .play i,
+.actions .prev i,
+.actions .next i
+{
   display: flex;
   font-size: 18px;
-  color: #6a7883;
+  color: transparent;
   float: left;
-  cursor: pointer;
-  padding: 15px 20px;
-  overflow: hidden;
+  cursor: pointer;  
 }
 
 .prev {
-  margin-left: 16px;
+  margin-left: 19px; 
   float: left;
+  content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 512 512' id='IconChangeColor'><title>ionicons-v5-c</title><polygon points='496 400 256 256 496 112 496 400'></polygon><polygon points='256 400 16 256 256 112 256 400'></polygon></svg>")!important;
+
 }
 
 .play {
-  margin: 0 20px 0 20px;
+  margin: 0 20px 0 20px; 
   float: left;
+  width: 30px;
+  height: 30px;
 }
 
 .next {
-  margin-right: px;
+  margin-right: 16px; 
   float: left;
+  content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 512 512' id='IconChangeColor'><title>ionicons-v5-c</title><polygon points='16 400 256 256 16 112 16 400'></polygon><polygon points='256 400 496 256 256 112 256 400'></polygon></svg>")!important;
+
+
 }
 
 #mute {
   display: none;
 }
 
+.play-video {
+  margin-left: 200px;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 512 512' id='_x32_'%3E%3Cg%3E%3Cpath d='M484.516,19.531l-48.297,69.797l47.984,69.344h-54.266l-47.969-69.344l49.813-72h-68.625l-49.813,72l47.969,69.344h-54.25l-47.969-69.344l49.797-72H240.25l-49.813,72l47.984,69.344h-54.266l-47.969-69.344l49.813-72h-68.625l-49.813,72l47.969,69.344h-54.25L13.313,89.328l49.813-72H40c-22.094,0-40,17.906-40,40v397.344c0,22.094,17.906,40,40,40h432c22.094,0,40-17.906,40-40V57.328C512,39.625,500.438,24.797,484.516,19.531z M480,454.672c0,4.422-3.594,8-8,8H40c-4.406,0-8-3.578-8-8v-264h448V454.672z'%3E%3C/path%3E%3Cpath d='M215.688,393.156c0.75,0.438,1.672,0.406,2.406-0.031l101.75-60.719c0.719-0.438,1.156-1.219,1.156-2.063c0-0.813-0.438-1.609-1.156-2.031l-101.75-60.734c-0.734-0.422-1.656-0.453-2.406-0.031c-0.719,0.422-1.188,1.234-1.188,2.078v60.719v60.734C214.5,391.953,214.969,392.75,215.688,393.156z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E")!important;
+  background: transparent;
+}
 
 
+.player-song {
+  display: flex;
+  flex-direction: column; /* Use 'row' if you want horizontal alignment */
+  align-items: center; /* Horizontally aligns items in the center */
+  justify-content: space-between; /* Evenly distributes space between items */
+  gap: 10px; /* Specifies the space between child elements */
+}
 
+.hidden-player {
+color: transparent;
 
+}
 
-  
+.play-video-button {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='65' height='65' viewBox='0 0 512 512' id='_x32_'%3E%3Cg%3E%3Cpath d='M484.516,19.531l-48.297,69.797l47.984,69.344h-54.266l-47.969-69.344l49.813-72h-68.625l-49.813,72l47.969,69.344h-54.25l-47.969-69.344l49.797-72H240.25l-49.813,72l47.984,69.344h-54.266l-47.969-69.344l49.813-72h-68.625l-49.813,72l47.969,69.344h-54.25L13.313,89.328l49.813-72H40c-22.094,0-40,17.906-40,40v397.344c0,22.094,17.906,40,40,40h432c22.094,0,40-17.906,40-40V57.328C512,39.625,500.438,24.797,484.516,19.531z M480,454.672c0,4.422-3.594,8-8,8H40c-4.406,0-8-3.578-8-8v-264h448V454.672z'%3E%3C/path%3E%3Cpath d='M215.688,393.156c0.75,0.438,1.672,0.406,2.406-0.031l101.75-60.719c0.719-0.438,1.156-1.219,1.156-2.063c0-0.813-0.438-1.609-1.156-2.031l-101.75-60.734c-0.734-0.422-1.656-0.453-2.406-0.031c-0.719,0.422-1.188,1.234-1.188,2.078v60.719v60.734C214.5,391.953,214.969,392.75,215.688,393.156z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E")!important;
+  width: 25px; /* Set the appropriate width */
+  height: 25px; /* Set the appropriate height */
+}
+
+.overlay-container {
+  display: flex;
+}
