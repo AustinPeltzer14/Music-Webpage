@@ -15,6 +15,7 @@ const projects = [
         title: "Song 2",
       },
     ],
+    category: "selected"
   },
   {
     type: "advert",
@@ -32,6 +33,7 @@ const projects = [
         title: "Woodkid - Iron",
       },
     ],
+    category: "film"
   },
   {
     type: "advert",
@@ -49,6 +51,7 @@ const projects = [
         songTitle: "song 5",
       },
     ],
+    category: "advert"
   },
   {
     type: "advert",
@@ -66,5 +69,6 @@ const projects = [
         songTitle: "song 7",
       },
     ],
-  },
+    category: "solo"
+  }
 ];

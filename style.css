@@ -5,6 +5,7 @@ body {
   position: relative;
   padding-left: calc((20 * 1px) + (100 - 20) * ((100vw - 320px) / (1920 - 320)));
   padding-right: calc((20 * 1px) + (100 - 20) * ((100vw - 320px) / (1920 - 320)));
+  font-family: "Helvetica Neue", "Arial", "sans-serif";
 }  
 
 button {
