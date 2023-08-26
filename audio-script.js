@@ -29,7 +29,6 @@ function buildAudioPlayer(audioFiles, audioContainer) {
 
   let listIcon = document.createElement("i");
   listIcon.className = "fa fa-list-ul";
-  // actionsDiv.appendChild(listIcon);
 
   let prevDiv = document.createElement("div");
   prevDiv.className = "prev";
@@ -42,12 +41,6 @@ function buildAudioPlayer(audioFiles, audioContainer) {
    let playDiv = document.createElement("div");
   playDiv.className = "play";
   actionsDiv.appendChild(playDiv);
-
-
-
-
-
-
 
   hiddenPlayer.playIcon = document.createElement("i");
   let playIcon = hiddenPlayer.playIcon
@@ -72,16 +65,6 @@ function buildAudioPlayer(audioFiles, audioContainer) {
     this.style.display = "none";
     pauseIcon.style.display = "block";
   });
-  /*$("#playmusic").click(function () {
-    hiddenPlayer.play();
-    $("#playmusic").hide();
-    $("#pause").show().addClass("active");
-  });
-  $("#pause").click(function () {
-    hiddenPlayer.pause();
-    $("#playmusic").show();
-    $("#pause").hide();
-  });*/
   let nextDiv = document.createElement("div");
   nextDiv.className = "next";
   actionsDiv.appendChild(nextDiv);
@@ -158,9 +141,6 @@ function buildAudioPlayer(audioFiles, audioContainer) {
       hiddenPlayer.src = songSrc; 
       hiddenPlayer.play(); 
       title.innerHTML = songTitle;
-      // hiddenPlayer.setAttribute("order", items);
-      // hiddenPlayer.setAttribute("src", songSrc).trigger("play");
-      // title.innerHTML(songTitle);
     } else {
       num -= 1;
       console.log("else",num)
@@ -173,23 +153,8 @@ function buildAudioPlayer(audioFiles, audioContainer) {
       hiddenPlayer.play(); 
       title.innerHTML = songTitle; 
       hiddenPlayer.order = num; 
-      // hiddenPlayer.setAttribute("src", songSrc).trigger("play");
-      // title.innerHTML(songTitle);
-
-      // hiddenPlayer.setAttribute("order", num);
     }
   });
-
-  // $("#playmusic").click(function () {
-  //   hiddenPlayer.play();
-  //   $("#playmusic").hide();
-  //   $("#pause").show().addClass("active");
-  // });
-  // $("#pause").click(function () {
-  //   hiddenPlayer.pause();
-  //   $("#playmusic").show();
-  //   $("#pause").hide();
-  // });
 
   hiddenPlayer.addEventListener("timeupdate", function () {
     console.dir(this)
@@ -232,17 +197,16 @@ function buildAudioPlayer(audioFiles, audioContainer) {
   });
 }
 
-/*const listContainer = document.createElement("ul");
-listContainer.classList.add("list-container");*/
+// creating the song elements
 
 const listContainer = document.getElementById("project-list");
 
-console.log(projects.length);
-
 for (let i = 0; i < projects.length; i++) {
   const project = projects[i];
-
   const listItem = document.createElement("li");
+  for (const word of project.category) {
+    listItem.classList.add(word); // Adding the word as a class
+  }
   const div = document.createElement("div");
   const h2 = document.createElement("h2");
   h2.className = "project-name";
@@ -259,11 +223,6 @@ for (let i = 0; i < projects.length; i++) {
 
   const playVideoButton = document.createElement("i");
   playVideoButton.className = "video-button play-video fa fa-youtube-play";
-  // playVideoButton.src = '<svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/><g id="SVGRepo_iconCarrier"> <style type="text/css">  .st0{fill:#000000;}  </style> <g> <path class="st0" d="M484.516,19.531l-48.297,69.797l47.984,69.344h-54.266l-47.969-69.344l49.813-72h-68.625l-49.813,72 l47.969,69.344h-54.25l-47.969-69.344l49.797-72H240.25l-49.813,72l47.984,69.344h-54.266l-47.969-69.344l49.813-72h-68.625 l-49.813,72l47.969,69.344h-54.25L13.313,89.328l49.813-72H40c-22.094,0-40,17.906-40,40v397.344c0,22.094,17.906,40,40,40h432 c22.094,0,40-17.906,40-40V57.328C512,39.625,500.438,24.797,484.516,19.531z M480,454.672c0,4.422-3.594,8-8,8H40 c-4.406,0-8-3.578-8-8v-264h448V454.672z"/> <path class="st0" d="M215.688,393.156c0.75,0.438,1.672,0.406,2.406-0.031l101.75-60.719c0.719-0.438,1.156-1.219,1.156-2.063 c0-0.813-0.438-1.609-1.156-2.031l-101.75-60.734c-0.734-0.422-1.656-0.453-2.406-0.031c-0.719,0.422-1.188,1.234-1.188,2.078 v60.719v60.734C214.5,391.953,214.969,392.75,215.688,393.156z"/> </g> </g></svg>'
-  
-  // const playVideoButton = document.createElement("img");
-  // playVideoButton.className = "video-button play-video";
-  // playVideoButton.src = '<svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/><g id="SVGRepo_iconCarrier"> <style type="text/css">  .st0{fill:#000000;}  </style> <g> <path class="st0" d="M484.516,19.531l-48.297,69.797l47.984,69.344h-54.266l-47.969-69.344l49.813-72h-68.625l-49.813,72 l47.969,69.344h-54.25l-47.969-69.344l49.797-72H240.25l-49.813,72l47.984,69.344h-54.266l-47.969-69.344l49.813-72h-68.625 l-49.813,72l47.969,69.344h-54.25L13.313,89.328l49.813-72H40c-22.094,0-40,17.906-40,40v397.344c0,22.094,17.906,40,40,40h432 c22.094,0,40-17.906,40-40V57.328C512,39.625,500.438,24.797,484.516,19.531z M480,454.672c0,4.422-3.594,8-8,8H40 c-4.406,0-8-3.578-8-8v-264h448V454.672z"/> <path class="st0" d="M215.688,393.156c0.75,0.438,1.672,0.406,2.406-0.031l101.75-60.719c0.719-0.438,1.156-1.219,1.156-2.063 c0-0.813-0.438-1.609-1.156-2.031l-101.75-60.734c-0.734-0.422-1.656-0.453-2.406-0.031c-0.719,0.422-1.188,1.234-1.188,2.078 v60.719v60.734C214.5,391.953,214.969,392.75,215.688,393.156z"/> </g> </g></svg>'
   
   const iframeContainer = document.createElement("div");
   iframeContainer.className = "iframe-container";
@@ -300,21 +259,6 @@ for (let i = 0; i < projects.length; i++) {
   overlay.className = "overlay";
 
   listItem.appendChild(overlayContainer);                  
-
-
-  
-  
-  
-
-
-  /*for (let j = 0; j < project.audioFiles.length; j++) {
-      const audioFile= project.audioFiles[j];
-      const audioControl = createAudioControl(audioFile.url);
-      div.appendChild(audioControl);
-      listItem.appendChild(audioControl);
-    } */
-
-  // listItem.appendChild(videoContainer);
   listItem.appendChild(creditsDiv);
 
   // Add next and prev divs
@@ -324,5 +268,3 @@ for (let i = 0; i < projects.length; i++) {
 
   buildAudioPlayer(audioFiles, audioContainer);
 }
-
-//document.getElementById("project-list").appendChild(listContainer);

@@ -1,6 +1,5 @@
 const projects = [
   {
-    type: "advert",
     projectName: "pearl & Duke",
     subTitle: "Supermarche",
     credits: "Composer",
@@ -15,10 +14,9 @@ const projects = [
         title: "Song 2",
       },
     ],
-    category: "selected"
+    category: ["selected"]
   },
   {
-    type: "advert",
     projectName: "Jeep",
     subTitle: "The Captain",
     credits: "Composer",
@@ -33,10 +31,9 @@ const projects = [
         title: "Woodkid - Iron",
       },
     ],
-    category: "film"
+    category: ["film", "selected"]
   },
   {
-    type: "advert",
     projectName: "Army",
     subTitle: "Build Your Future",
     credits: "Composer",
@@ -51,11 +48,10 @@ const projects = [
         songTitle: "song 5",
       },
     ],
-    category: "advert"
+    category: ["ads"]
   },
   {
-    type: "advert",
-    projectName: "Army",
+    projectName: "Army2",
     subTitle: "Build Your Future",
     credits: "Composer",
     videoURL: "https://www.youtube.com/watch?v=-9pdjK09VBY",
@@ -69,6 +65,6 @@ const projects = [
         songTitle: "song 7",
       },
     ],
-    category: "solo"
+    category: ["solo"]
   }
 ];

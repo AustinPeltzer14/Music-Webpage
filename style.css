@@ -14,20 +14,27 @@ button {
 }
 
 .listings {
-display: flex;
-justify-content: space-between;
-width: 30%;
-margin-bottom: -10px;
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  list-style-type: none;
+  padding: 0;
 }
 
-.underline-me {
-  border-bottom: 1px solid black;
-  width: 100%;
+.listings li {
+  margin-right: 2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.listings li.active {
+  font-weight: 700;
+  color: red;
 }
 
 .main-container {
   position: relative;
-  
 }
 
 .list-container {
@@ -37,7 +44,7 @@ margin-bottom: -10px;
 }
 
 .list-container li {
-    margin: 0 0 3rem 0;
+    margin: 0 0 1.5rem 0;
     color: transparent;
     background-image: linear-gradient(90deg, red 50%, white 50%);
     background-position: 100%;
@@ -285,4 +292,20 @@ display: flex;
 .fa.fa-youtube-play {
   font-size: 2.5rem;
   cursor: pointer;
+}
+
+.listings-section.selected + .main-section.selected .list-container > li:not(.selected) {
+  display: none;
+}
+.listings-section.film + .main-section.film .list-container > li:not(.film) {
+  display: none;
+}
+.listings-section.ads + .main-section.ads .list-container > li:not(.ads) {
+  display: none;
+}
+.listings-section.solo + .main-section.solo .list-container > li:not(.solo) {
+  display: none;
+}
+.listings-section.contact + .main-section.contact .list-container > li:not(.contact) {
+  display: none;
 }
